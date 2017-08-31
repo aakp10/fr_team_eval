@@ -42,7 +42,7 @@ var computeTeamResults = function(args, logger=console) {
         */
         var teamView = _.transform(teams, function (result, team) {
           (result[team[1]] || (result[team[1]] = [])).push(team[0])
-        }, {})
+        }, {});
 
         /* marksView Object of the form:
         * {
@@ -81,7 +81,7 @@ var computeTeamResults = function(args, logger=console) {
         logger.info("Illegal inputs\n", illegalInputs);
 
         return output(finalMarks, args.teamScorescsv || "./teamScores.csv");
-    }).catch(err => { logger.error(err)});
+    });
 };
 
 module.exports = {
